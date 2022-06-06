@@ -47,7 +47,7 @@ variable "image_offer" {
 
 variable "image_sku" {
   description = "Image SKU to apply (az vm image list)"
-  default     = "16.04-LTS"
+  default     = "20.04-LTS"
 }
 
 variable "image_version" {
@@ -66,12 +66,12 @@ variable "admin_password" {
 }
 
 variable "height" {
-  default     = "400"
+  default     = "600"
   description = "Image height in pixels."
 }
 
 variable "width" {
-  default     = "600"
+  default     = "800"
   description = "Image width in pixels."
 }
 
