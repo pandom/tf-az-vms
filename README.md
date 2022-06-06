@@ -1,3 +1,5 @@
-# Your Terraform Workspace
+# Beard Application for Azure
 
-Update this readme with information relevant to the project you are working on.
+This application is deployed by Terraform Cloud into Azure. 
+
+It will deploy all relevent objects to support the beard application
