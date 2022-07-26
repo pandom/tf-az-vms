@@ -3,3 +3,4 @@
 # Make sure it is at least 5 characters long.
 
  prefix = "burkey-av"
+ myip = "180.150.37.27"

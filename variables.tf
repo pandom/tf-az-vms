@@ -9,6 +9,11 @@ variable "prefix" {
   description = "This prefix will be included in the name of most resources."
 }
 
+variable "myip" {
+  description = "Burkey's home IP address"
+  
+}
+
 variable "apptype" {
   description = "This suffix will be included in the name of most web resources"
   default = "beard"
