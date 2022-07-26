@@ -25,9 +25,9 @@ resource "azurerm_virtual_network" "vnet" {
   location            = azurerm_resource_group.myresourcegroup.location
   address_space       = [var.address_space]
   resource_group_name = azurerm_resource_group.myresourcegroup.name
-  # tags = {
-  #   "environment" = "Production"
-  # }
+  tags = {
+    "environment" = "Production"
+  }
 }
 
 resource "azurerm_subnet" "subnet" {
@@ -50,7 +50,7 @@ resource "azurerm_network_security_group" "catapp-sg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "80"
-    source_address_prefix      = "*"
+    source_address_prefix      = var.myip
     destination_address_prefix = "*"
   }
 
@@ -62,8 +62,9 @@ resource "azurerm_network_security_group" "catapp-sg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "443"
-    source_address_prefix      = "*"
+    source_address_prefix      = var.myip
     destination_address_prefix = "*"
+
   }
 
   security_rule {
@@ -74,7 +75,7 @@ resource "azurerm_network_security_group" "catapp-sg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "*"
+    source_address_prefix      = var.myip
     destination_address_prefix = "*"
   }
 }
